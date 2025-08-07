@@ -1,11 +1,11 @@
 <template>
-  <div class="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600">
-    <div class="bg-white p-8 rounded-lg shadow-2xl w-full max-w-md">
-      <h2 class="text-3xl font-bold text-center mb-8">Welcome Back</h2>
+  <div class="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-500 to-purple-600">
+    <div class="w-full max-w-md p-8 bg-white rounded-lg shadow-2xl">
+      <h2 class="mb-8 text-3xl font-bold text-center">Welcome Back</h2>
 
       <form @submit.prevent="handleLogin" class="space-y-6">
         <div>
-          <label class="block text-sm font-medium text-gray-700 mb-2">
+          <label class="block mb-2 text-sm font-medium text-gray-700">
             Username or Email
           </label>
           <input v-model="credentials.username" type="text" required
@@ -13,19 +13,19 @@
         </div>
 
         <div>
-          <label class="block text-sm font-medium text-gray-700 mb-2">
+          <label class="block mb-2 text-sm font-medium text-gray-700">
             Password
           </label>
           <input v-model="credentials.password" type="password" required
             class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500" />
         </div>
 
-        <div v-if="error" class="p-3 bg-red-50 border border-red-200 rounded-lg">
-          <p class="text-red-600 text-sm">{{ error }}</p>
+        <div v-if="error" class="p-3 border border-red-200 rounded-lg bg-red-50">
+          <p class="text-sm text-red-600">{{ error }}</p>
         </div>
 
         <button type="submit" :disabled="loading"
-          class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition duration-200 disabled:opacity-50">
+          class="w-full px-4 py-2 text-white transition duration-200 bg-blue-600 rounded-lg hover:bg-blue-700 disabled:opacity-50">
           {{ loading ? 'Logging in...' : 'Login' }}
         </button>
       </form>
@@ -39,9 +39,8 @@
         </p>
       </div>
 
-      <div class="mt-4 p-3 bg-gray-100 rounded-lg">
+      <div class="p-3 mt-4 bg-gray-100 rounded-lg">
         <p class="text-xs text-gray-600">
-          <strong>Demo Admin:</strong> username: admin, password: admin123
         </p>
       </div>
     </div>
